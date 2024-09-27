@@ -22,7 +22,9 @@ def argmax(values):
     vmax : int or float
         Maximum value
     '''
-
+    if len(values)==0:
+        raise ValueError("Empty sequences not supported")
+    Yes=0
     # ADD YOUR IMPLEMENTATION HERE
     imax=0
     vmax=values[0]
@@ -43,6 +45,12 @@ def main():
     maximum=argmax(values)
     # ADD YOUR IMPLEMENTATION HERE
     print(maximum)
+    
+    try:
+         argmax([])
+    except ValueError:
+        print("error encountered")
 
 if __name__ == '__main__':
     main()
+    
